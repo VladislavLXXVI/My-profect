@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
 
 devise_for :users
 
@@ -16,8 +18,7 @@ end
 root 'main#graf'
 
 get 'contact', to: 'contact#follow', as: 'contact'
-get 'menu', to: 'menu#model_menu', as: 'menu'
-
+get 'product', to: 'product#index', as: 'products_list'
 end
 
 

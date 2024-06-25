@@ -8,6 +8,7 @@
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -59,18 +60,27 @@
 </head>
 <body>
   <header>
+    <h1>Kava for you</h1> 
     <nav>
       <ul>
-       <li><%= link_to 'Головна', root_path %></li>
-       <li><%= link_to 'Контакти', contact_path %></li>
-       <li><%= link_to 'Меню', menu_path %></li>
+        <li><%= link_to 'Main', root_path %></li>
+        <li><%= link_to 'Contact', contact_path %></li>
+        <li><%= link_to 'Menu', products_path %></li>
+        <li>
+          <%= link_to carts_path, class: 'btn btn-primary' do %>
+            <i class="fa fa-shopping-cart"></i> Cart
+            <% if @cart.present? && @cart.line_items.any? %>
+              <span class="badge badge-light"><%= @cart.line_items.count %></span>
+            <% end %>
+          <% end %>
+        </li>
       </ul> 
       <ul>
         <% if user_signed_in? %>
-          <li><%= link_to 'Вихід', logout_path, method: :delete %></li>
+          <li><%= link_to 'Logout', logout_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to 'Реєстрація', signup_path %></li>
-          <li><%= link_to 'Вхід', login_path %></li>
+          <li><%= link_to 'Sing up', signup_path %></li>
+          <li><%= link_to 'Login', login_path %></li>
         <% end %>
       </ul>
     </nav>

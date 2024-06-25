@@ -1,16 +1,80 @@
-
 <!DOCTYPE html>
 <html lang="ua">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kava for You</title>
+  <!-- Подключение Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #ce93d8);
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .header {
+      background-color: rgba(0, 0, 0, 0.6); 
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .header {
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Welcome to Kava for You</h1>
+      <p>Your cozy place to enjoy the best coffee in town. Discover our range of delicious pastries and refreshing drinks in a warm, inviting atmosphere.</p>
+    </div>
 
-
-
-  <div class="header">
-    <h1>Hello welcome to kafe ''kava_fafs''</h1>
-    <p>Нажмите на любую кнопку ниже</p>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="/images/cafe/cafe2.jpg" alt="cafe2">
+      </div>
+      <div class="gallery-item">
+        <img src="/images/cafe/cafe3.jpg" alt="Pastries">
+      </div>
+      <div class="gallery-item">
+        <img src="/images/cafe/cafe4.jpg" alt="Café Interior">
+      </div>
+    </div>
   </div>
-   
+
+  <!-- Скрипты Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
-  
+</html>

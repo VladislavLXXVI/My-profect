@@ -11,6 +11,12 @@ gem "sprockets-rails"
 
 gem "sqlite3", "~> 1.4"
 
+gem 'bootstrap', '~> 5.3.3'
+
+gem 'sassc-rails', '>= 2.0'
+
+gem 'cssbundling-rails'
+
 
 gem "puma", ">= 5.0"
 

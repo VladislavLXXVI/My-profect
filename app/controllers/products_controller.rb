@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
   end
 
   def new
@@ -40,8 +41,15 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    current_user.cart.add(@product)
-    redirect_to cart_path, notice: 'Product was successfully added to your cart.'
+    product = Product.find(params[:id])
+    # Здесь логика для создания line_item
+    @line_item = LineItem.new(product: product, cart: current_cart)
+
+    if @line_item.save
+      redirect_to cart_path, notice: 'Product added to cart!'
+    else
+      redirect_to products_path, alert: 'Unable to add product to cart.'
+    end
   end
 
   private
