@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     product = Product.find(params[:id])
-    # Здесь логика для создания line_item
+    
     @line_item = LineItem.new(product: product, cart: current_cart)
 
     if @line_item.save
